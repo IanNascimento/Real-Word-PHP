@@ -1,0 +1,29 @@
+version: '3.1'
+services:
+
+  php:
+    build:
+      context: .
+    # environment:
+    #   DB_HOST: docker_mysql_1
+    #   DB_PORT: 3306
+    #   DB_DATABASE: db
+    #   DB_USERNAME: user
+    #   DB_PASSWORD: password
+    # volumes:
+    #   - ../:/app
+    # working_dir: /app
+    ports:
+      - 8000:8000
+    links:
+      - mysql
+
+  mysql:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - 3306:3306
