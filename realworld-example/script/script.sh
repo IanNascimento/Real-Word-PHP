@@ -1,4 +1,4 @@
-cd ~/environment/Real-Word-PHP/realworld-exampl
+cd ~/environment/Real-Word-PHP/realworld-example
 
 composer install
 cp .env.example.docker .env
